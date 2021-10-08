@@ -1,0 +1,21 @@
+version: '3'
+  
+services:
+    rundeck:
+        image: rundeck/ustocktrade:1.0
+        tty: true
+        volumes:
+          - type : bind
+            source : /home/rundeck/server/config
+            target: /home/rundeck/server/config
+
+          - type : bind
+            source : /home/rundeck/server/data
+            target: /home/rundeck/server/data
+
+          - type : bind
+            source : /home/rundeck/server/work
+            target: /home/rundeck/server/work
+
+        ports:
+          - 4440:4440
