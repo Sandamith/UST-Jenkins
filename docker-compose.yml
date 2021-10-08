@@ -2,7 +2,7 @@ version: '3'
   
 services:
     rundeck:
-        image: rundeck/ustocktrade:1.0
+        image: sandamith/rundeck-ust:1.0
         tty: true
         volumes:
           - type : bind
