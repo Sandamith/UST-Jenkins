@@ -1,21 +1,22 @@
 version: '3'
-  
+
 services:
     rundeck:
-        image: sandamith/rundeck-ust:1.0
+        image: rundeck/ust:1.0
         tty: true
+        environment:
+          RUNDECK_GRAILS_URL: http://54.218.149.216:4440
         volumes:
-          - type : bind
-            source : /home/rundeck/server/config
+          - type: bind
+            source: /home/rundeck/server/data
+            target: /home/rundeck/server/data
+          
+          - type: bind
+            source: /home/rundeck/server/config
             target: /home/rundeck/server/config
 
-          - type : bind
-            source : /home/rundeck/server/data
-            target: /home/rundeck/server/data
-
-          - type : bind
-            source : /home/rundeck/server/work
-            target: /home/rundeck/server/work
-
+          - type: bind
+            source: /home/rundeck/server/work
+            target: /home/rundeck/server/work  
         ports:
           - 4440:4440
