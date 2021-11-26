@@ -5,7 +5,7 @@ services:
         image: rundeck/ust:1.0
         tty: true
         environment:
-          RUNDECK_GRAILS_URL: http://54.218.149.216:4440
+          RUNDECK_GRAILS_URL: http://rundeck.ustockops.com
         volumes:
           - type: bind
             source: /home/rundeck/server/data
